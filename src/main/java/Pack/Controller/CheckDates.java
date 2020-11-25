@@ -42,9 +42,9 @@ class CheckDates {
 
     static boolean isUserWin() {
         if (MouseListener.date.contains("31.12")) {
-            MessageDialog.winMessage();
             Fields.textArea.append("Ваш ход: " + MouseListener.date + Fields.newline);
             Fields.dateField.setEditable(false);
+            MessageDialog.winMessage();
             return true;
         }
         return false;
