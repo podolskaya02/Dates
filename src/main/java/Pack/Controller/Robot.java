@@ -5,10 +5,10 @@ import Pack.Model.Fields;
 import java.text.ParseException;
 import java.util.Calendar;
 
-class Robot {
+public class Robot {
 
-    static String robotDate;
-    static Calendar calendar;
+    public static String robotDate;
+    public static Calendar calendar;
 
     void moveForStartField() throws ParseException { // Первый ход робота (обработка начальной даты игрока)
         calendar = Calendar.getInstance();
@@ -29,7 +29,7 @@ class Robot {
     }
 
 
-    private void robotMove(){
+    public void robotMove(){
         int numOfOptions = 4; // количество варинтов ходов для робота
         if (Fields.dateField.getDate() != null) calendar.setTime(Fields.dateField.getDate());
         else calendar.setTime(Fields.startField.getDate());

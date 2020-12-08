@@ -8,8 +8,8 @@ import java.text.ParseException;
 
 public class MouseListener {
 
-    static String startDate;
-    static String date;
+    public static String startDate;
+    public static String date;
     private Robot robot = new Robot();
 
     public MouseListener(){}

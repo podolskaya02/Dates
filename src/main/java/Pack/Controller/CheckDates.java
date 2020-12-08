@@ -6,10 +6,10 @@ import Pack.View.MessageDialog;
 import java.util.Calendar;
 import java.util.Date;
 
-class CheckDates {
+public class CheckDates {
     // Класс проверяет даты: правильность выбора даты в соответсвиями с правилами, и является ли она окончательной
 
-    static boolean userMove(){ // Проверка хода игрока
+    public static boolean userMove(){ // Проверка хода игрока
         Calendar calendarForCheck = Calendar.getInstance();
         calendarForCheck.setTime(Robot.calendar.getTime());
         calendarForCheck.add(Calendar.DATE, 1); // Прибавлен один день к дате робота
@@ -40,7 +40,7 @@ class CheckDates {
         return true;
     }
 
-    static boolean isUserWin() {
+    public static boolean isUserWin() {
         if (MouseListener.date.contains("31.12")) {
             Fields.textArea.append("Ваш ход: " + MouseListener.date + Fields.newline);
             Fields.dateField.setEditable(false);
@@ -50,10 +50,12 @@ class CheckDates {
         return false;
     }
 
-    static void isUserLose() {
+    public static boolean isUserLose() {
          if (Robot.robotDate.contains("31.12")) {
              MessageDialog.loseMessage();
              Fields.dateField.setEditable(false);
+             return true;
          }
+         return false;
     }
 }
